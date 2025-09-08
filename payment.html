@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* --- Header Styles (Same as before) --- */
+        .header {
+            background-color: #3498db;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .header .logo {
+            height: 40px;
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+
+        .header .header-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .header .left-content {
+            display: flex;
+            align-items: center;
+        }
+
+        /* --- Main Content (Form Centering) Styles --- */
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        form {
+            border: 2px solid #e74c3c;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            background-color: #fff;
+            width: 400px; /* Adjusted width for simpler content */
+            max-width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* Increased gap for spacing */
+        }
+        
+        /* --- New Styles for Payment Page --- */
+        .bus-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .payment-options label {
+            font-size: 18px;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .payment-options input[type="radio"] {
+            margin-right: 10px;
+            /* Makes the radio button larger and easier to click */
+            transform: scale(1.2); 
+        }
+
+        h3 {
+            color: #333;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* --- Button Style (Same as before) --- */
+        button[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            align-self: center; /* Center the button */
+        }
+
+        button[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="left-content">
+            <img src="https://via.placeholder.com/40x40?text=Logo" alt="Company Logo" class="logo">
+            <span class="header-text">Book Seat</span>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <form>
+            <img src="https://via.placeholder.com/400x250?text=Bus+Image" alt="Bus Image" class="bus-image">
+
+            <h3>Select Your Payment Mode</h3>
+            
+            <div class="payment-options">
+                <div>
+                    <input type="radio" id="upi" name="payment_mode" value="upi">
+                    <label for="upi">UPI</label>
+                </div>
+                <div>
+                    <input type="radio" id="atm" name="payment_mode" value="atm">
+                    <label for="atm">ATM</label>
+                </div>
+            </div>
+
+            <button type="submit">Proceed to Pay</button>
+        </form>
+    </div>
+
+</body>
+</html>
