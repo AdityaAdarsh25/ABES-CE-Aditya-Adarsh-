@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centered Box</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh; 
+      display: flex;
+      justify-content: center; /* center horizontally */
+      align-items: center;     /* center vertically */
+      background: #f9f9f9;
+    }
+    .box {
+      width: 400px;
+      height: 400px;
+      background: lightblue;
+      border: 2px solid navy;
+    }
+    .counter{
+        display:flex;
+        justify-content:space-evenly;
+        align-items:center;
+        height:200px;
+    }
+    .buttons{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="counter">
+        <img src="C:\Users\HP\Desktop\ABES CE\imagefolder\Counter.webp" alt="Counter" style="border-radius: 50%; width: 150px; height: 150px;">
+        <h1>Counter App</h1>
+    </div>
+    <div class="buttons">
+        <button onclick="decrement()" style="width:90px; padding: 20px; font-size: 20px; border-radius: 10px; background-color: red; color: white; border: none; cursor: pointer;">-</button>
+        <span id="count" style="font-size: 50px; margin: 0 20px;">0</span>
+        <button onclick="increment()" style="width:90px; padding: 20px; font-size: 20px; border-radius: 10px; background-color: green; color: white; border: none; cursor: pointer;">+</button>
+    </div>
+  </div>
+  <script>
+    function increment() {
+      let countElement = document.getElementById('count');
+      let currentCount = parseInt(countElement.textContent);
+      if(currentCount>=10){
+        alert("CANNOT BE GREATER THAN 10");
+        return;
+      }
+      else{
+        countElement.textContent = currentCount + 1;
+      }
+      
+    }
+    function decrement() {
+      let countElement = document.getElementById('count');
+      let currentCount = parseInt(countElement.textContent);
+      if(currentCount<=0){
+        alert("CANNOT BE LESS THAN 0");
+        return;
+      }
+      else{
+        countElement.textContent = currentCount - 1;
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh; 
+            display: flex;
+            justify-content: center; 
+            align-items: center;     
+            background: #f9f9f9;
+        }
+        .box {
+            width: 600px;
+            height: 600px;
+            background: white;
+            border: 2px solid navy;
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 260px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="imaging">
+            <img src="C:\Users\HP\Desktop\ABES CE\imagefolder\ferrari.jpg" alt="Ferrari" style=" width: 600px; height: 300px;">
+        </div>
+        <div class="btn">
+            <button onclick="hide()" style="width:130px; padding: 20px; font-size: 20px; border-radius: 10px; background-color: red; color: white; border: none; cursor: pointer;">HIDE</button>
+            <button onclick="change()" style="width:130px; padding: 20px; font-size: 20px; border-radius: 10px; background-color: green; color: white; border: none; cursor: pointer; margin-left:20px;">CHANGE</button>
+        </div>
+    </div>
+    <script>
+        function hide(){
+            const imgDiv = document.getElementsByClassName("imaging")[0];
+            if(imgDiv.style.visibility === 'hidden'){
+                imgDiv.style.visibility = 'visible'; 
+            } else {
+                imgDiv.style.visibility = 'hidden'; 
+            }
+        }
+        function change(){
+            const imgDiv=document.getElementsByClassName("imaging")[0];
+            const imgTag = imgDiv.querySelector("img"); 
+            if(imgTag.src.includes("ferrari.jpg")){
+                imgTag.src = "C:\\Users\\HP\\Desktop\\ABES CE\\imagefolder\\mclaren.jpg";
+                return;
+            }
+            else{
+                imgTag.src = "C:\\Users\\HP\\Desktop\\ABES CE\\imagefolder\\ferrari.jpg";
+            }
+        }
+    </script>
+</body>
+</html>

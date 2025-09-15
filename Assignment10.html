@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align card at the top */
+            min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+            background-color: #f4f4f4;
+            overflow-y: auto; /* Allow scrolling if content overflows */
+        }
+        .container {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: left;
+            margin-top: 20px; /* Add some space from the top */
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            margin: 0 0 10px;
+            color: #444;
+            font-size: 18px;
+        }
+        .row {
+            margin: 10px 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        .row:last-child {
+            border-bottom: none;
+        }
+        .row p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .row h3 {
+            margin: 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section" id="common-eye-color">
+            <h2>Common Eye Colors</h2>
+        </div>
+        <div class="section" id="uncommon-eye-color">
+            <h2>Uncommon Eye Colors</h2>
+        </div>
+    </div>
+    <script>
+        const persons = [
+            {firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue"},
+            {firstName: "Anna", lastName: "Smith", age: 40, eyeColor: "green"},
+            {firstName: "Peter", lastName: "Jones", age: 45, eyeColor: "brown"},
+            {firstName: "Rohan", lastName: "Sharma", age: 25, eyeColor: "black"},
+            {firstName: "Emily", lastName: "Clark", age: 30, eyeColor: "hazel"},
+            {firstName: "Michael", lastName: "Brown", age: 35, eyeColor: "black"},
+            {firstName: "Sophia", lastName: "Taylor", age: 28, eyeColor: "blue"},
+            {firstName: "Liam", lastName: "Wilson", age: 32, eyeColor: "gray"},
+            {firstName: "Olivia", lastName: "Davis", age: 29, eyeColor: "brown"}
+        ];
+
+        const commonEyeColors = ["blue", "brown", "black"];
+        const commonSection = document.getElementById("common-eye-color");
+        const uncommonSection = document.getElementById("uncommon-eye-color");
+
+        persons.forEach(person => {
+            const rowHTML = `
+                <div class="row">
+                    <h3>${person.firstName} ${person.lastName}</h3>
+                    <p>Age: ${person.age}</p>
+                    <p>Eye Color: ${person.eyeColor}</p>
+                </div>
+            `;
+
+            if (commonEyeColors.includes(person.eyeColor)) {
+                commonSection.innerHTML += rowHTML;
+            } else {
+                uncommonSection.innerHTML += rowHTML;
+            }
+        });
+    </script>
+</body>
+</html>
