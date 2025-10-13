@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #first{
+            border:5px solid blue;
+            height:300px;
+            width:300px;
+            background-color:cyan;
+        }
+        .btn{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background-color:green;
+            color:white;
+            padding:10px;
+            margin:auto;
+            border-radius:5px;
+            border:none;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="first">
+        <button class="btn" onclick="show()">Click Me</button>
+        <p id="demo"></p>
+    </div>
+    <script>
+        function show(){
+            document.getElementById("first").innerHTML = "<h1>Hello World</h1>";
+        }
+        
+    </script>
+</body>
+</html>
