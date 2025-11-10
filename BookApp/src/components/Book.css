@@ -1,6 +1,86 @@
+ 
 #book {
-    border: 5px solid red;
-    height: 300px;
-    width: 250px;
-    background-color: coral;
+    width:400px;
+    aspect-ratio: 1 / 1;        /* keep card square */
+    background: linear-gradient(180deg,#ff9b76,#ff7b50);
+    border: 2px solid #c0392b;
+    border-radius: 12px;
+    padding: 12px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
 }
+
+/* image at top */
+#book img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex: 0 0 auto;
+}
+
+/* metadata row: keep title and price in one line */
+#book .meta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    white-space: nowrap;       /* prevent wrapping */
+    overflow: hidden;
+}
+
+#book .meta .title,
+#book .meta .price {
+    font-size: 8px;
+    line-height: 1.1;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* controls (qty + add) at bottom */
+#book .controls {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+/* qty controls */
+#book .qty {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#book button {
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: rgba(0,0,0,0.45);
+    color: #fff;
+}
+
+#book button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* responsive: on very small screens make card vertical but keep square via aspect-ratio */
+@media (max-width: 520px) {
+    #book {
+        width: var(--card-size, 220px);
+        padding: 12px;
+    }
+
+    #book img { width: 100px; height: 100px; }
+}
+
+/* ...existing code... */

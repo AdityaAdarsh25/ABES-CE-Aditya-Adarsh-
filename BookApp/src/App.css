@@ -1,42 +1,87 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* ...existing code... */
+
+:root{
+  --nav-height: 64px;
+  --card-size: 300px; /* square size */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+html,body,#root {
+  height: 100%;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* navbar */
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: #2c3e50;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  z-index: 1000;
 }
 
-.card {
-  padding: 2em;
+.nav-brand{
+  font-weight: 700;
+  letter-spacing: 0.4px;
 }
 
-.read-the-docs {
-  color: #888;
+.nav-actions { display:flex; gap: 8px; align-items:center; }
+
+.logout-btn{
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
 }
+
+.cart-btn{
+    background: #27ae60;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* page wrapper to avoid navbar overlap */
+#adi {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: calc(var(--nav-height) + 16px) 12px 24px; /* leave space for navbar */
+}
+
+/* grid of square book cards, side-by-side */
+.books {
+    width: 100%;
+    /* max-width: 1000px; */
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: start;
+    box-sizing: border-box;
+}
+
+/* small screens: reduce square size */
+@media (max-width: 520px) {
+  :root { --card-size: 220px; }
+}
+
+/* ...existing code... */
