@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
-import Book from './components/Book.jsx'
+import Book from './components/Book.jsx';
 import Login from './components/Login';
 import Register from './components/Register';
 import CartPage from './components/CartPage';
@@ -76,10 +76,7 @@ function App() {
             </main>
           } />
           
-          <Route path="/cart" element={
-            <CartPage items={cartItems} setItems={setCartItems} />
-          } />
-          
+          <Route path="/cart" element={<CartPage items={cartItems} setItems={setCartItems} />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
