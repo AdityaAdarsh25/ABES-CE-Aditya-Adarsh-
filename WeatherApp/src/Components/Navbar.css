@@ -1,0 +1,54 @@
+/* simple responsive navbar for WeatherApp */
+.w-navbar{
+  width: 100%;
+  background: linear-gradient(90deg,#2c3e50,#34495e);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.w-brand{
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  font-size: 18px;
+  margin-right: 8px;
+}
+
+.w-search{
+  margin-left: auto;
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+
+.w-input{
+  padding:8px 12px;
+  border-radius:6px;
+  border: none;
+  min-width:180px;
+  font-size:14px;
+}
+
+.w-btn{
+  padding:8px 12px;
+  background:#27ae60;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.w-btn:hover{ opacity:0.95; transform: translateY(-1px); transition: all .12s ease; }
+
+@media (max-width:520px){
+  .w-search{ gap:6px; }
+  .w-input{ min-width:120px; }
+}
