@@ -1,0 +1,74 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Grid for sample cards */
+.cards-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 2rem 0 4rem;
+}
+
+/* Header and footer */
+.app-header {
+  background: linear-gradient(90deg,#4f46e5,#06b6d4);
+  color: white;
+  padding: 18px 12px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 8px;
+  margin: 20px auto 8px;
+  max-width: 980px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.08);
+}
+
+.app-footer {
+  margin-top: 18px;
+  padding: 14px 12px;
+  color: #475569;
+  font-size: 13px;
+  text-align: center;
+}
