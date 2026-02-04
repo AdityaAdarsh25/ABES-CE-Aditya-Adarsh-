@@ -1,0 +1,20 @@
+const http=require('http');
+var express = require('express')
+var multer  = require('multer')
+var app = express()
+var port = 3000;
+
+const myserver=http.createServer((req,res)=>{
+    if(req.url=='/'){
+        res.end("Home Page");
+    }else if(req.url=='/about'){
+        res.end("<h1>About Page</h1><img src='https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/fom-website/2026/Mercedes/Mercedes-AMG%20F1%20W17%20E%20PERFORMANCE%20-%20GR%206.webp' height='1000' width='1000' alt='ABES Logo'/>");
+    }else if(req.url=='/class'){
+        res.end("CE(Computer Engineering)");
+    }else{
+        res.end("404 Page Not Found");
+    }
+});
+myserver.listen(9200,()=>{
+    console.log("Server1 is running on port 9200");
+});
