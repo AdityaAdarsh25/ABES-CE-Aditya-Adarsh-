@@ -1,4 +1,4 @@
-const http=require('http');
+/* const http=require('http');
 var express = require('express')
 var multer  = require('multer')
 var app = express()
@@ -17,4 +17,17 @@ const myserver=http.createServer((req,res)=>{
 });
 myserver.listen(9200,()=>{
     console.log("Server1 is running on port 9200");
+}); */
+const fs=require('fs');
+/* fs.writeFileSync("./CE.txt","we are students of ABES engineering college"); */
+/* const result=fs.readFileSync("./CE.txt","utf-8")
+console.log(result);
+const hello=fs.readFileSync("./CSE-A.txt","utf-8")
+console.log(hello); */
+fs.readFile("./CSE-A.txt","utf-8",(err,result)=>{
+    if(err){
+        console.log("Error",err);
+    }else{
+        console.log(result);
+    }
 });
