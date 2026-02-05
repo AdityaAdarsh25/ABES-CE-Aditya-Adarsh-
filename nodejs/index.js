@@ -31,10 +31,9 @@ console.log(hello); */
         console.log(result);
     }
 }); */
-const t = fs.readFileSync("./a.txt", "utf-8");
-console.log(t);
+/* const t = fs.readFileSync("./a.txt", "utf-8");
 fs.appendFileSync("./CE.txt",t);
-console.log("File written successfully");
+console.log("File written successfully"); */
 /* const data=fs.readFile("./CE.txt","utf-8",(err,result)=>{
     if(err){
         console.log("Error",err);
@@ -49,3 +48,17 @@ fs.writeFile("./CE-A.txt",data,(err)=>{
         console.log("File written successfully");
     }
 }); */
+/* fs.unlink("./CE.txt",(err)=>{
+    if(err){
+        console.log("Error",err);
+    }else{
+        console.log("File Deleted Successfully");
+    }
+}); */
+fs.appendFile("./CE-A.txt",`Coders of Nice`,(err)=>{
+    if(err){
+        console.log("Error",err);
+    }else{
+        console.log("File Written")
+    }
+});
