@@ -24,10 +24,28 @@ const fs=require('fs');
 console.log(result);
 const hello=fs.readFileSync("./CSE-A.txt","utf-8")
 console.log(hello); */
-fs.readFile("./CSE-A.txt","utf-8",(err,result)=>{
+/* fs.readFile("./CSE-A.txt","utf-8",(err,result)=>{
+    if(err){
+        console.log("Error",err);
+    }else{
+        console.log(result);
+    }
+}); */
+const t = fs.readFileSync("./a.txt", "utf-8");
+console.log(t);
+fs.appendFileSync("./CE.txt",t);
+console.log("File written successfully");
+/* const data=fs.readFile("./CE.txt","utf-8",(err,result)=>{
     if(err){
         console.log("Error",err);
     }else{
         console.log(result);
     }
 });
+fs.writeFile("./CE-A.txt",data,(err)=>{
+    if(err){
+        console.log("Error",err);
+    }else{
+        console.log("File written successfully");
+    }
+}); */
