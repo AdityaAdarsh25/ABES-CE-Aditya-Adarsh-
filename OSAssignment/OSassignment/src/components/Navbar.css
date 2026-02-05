@@ -1,0 +1,42 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: #0b5cff;
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.logo {
+  width: 40px;
+  height: 40px;
+}
+.home-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+}
+.site-nav {
+  display: flex;
+  gap: 1rem;
+}
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+}
+.nav-link:hover {
+  background: rgba(255,255,255,0.12);
+  border-radius: 4px;
+}
