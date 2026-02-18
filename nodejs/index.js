@@ -55,10 +55,18 @@ fs.writeFile("./CE-A.txt",data,(err)=>{
         console.log("File Deleted Successfully");
     }
 }); */
-fs.appendFile("./CE-A.txt",`Coders of Nice`,(err)=>{
+/* fs.appendFile("./CE-A.txt",`Coders of Nice`,(err)=>{
     if(err){
         console.log("Error",err);
     }else{
         console.log("File Written")
     }
-});
+}); */
+const os=require('os');
+console.log("platform",os.platform());
+console.log("user",os.userInfo());
+console.log("CPU",os.arch());
+console.log("free memory",os.freemem());
+console.log("total memory",os.totalmem());
+console.log("Uptime",os.uptime());
+console.log("host name",os.hostname());
