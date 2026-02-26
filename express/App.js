@@ -11,6 +11,11 @@ const drivers=[
         id:2,
         name:"Leclerc",
         class:"Ferrari"
+    },
+    {
+        id:3,
+        name:"Piastri",
+        class:"Mclaren"
     }
 ]
 //data read now
@@ -22,6 +27,7 @@ app.get('/read',(req,res)=>{
     }
 });
 
+app.use(express.json());
 //data show(for id)
 app.get('/select/:id',(req,res)=>{
     try{
@@ -33,6 +39,53 @@ app.get('/select/:id',(req,res)=>{
         res.status(200).json({message:"Drivers Data Found",driver});
     }catch(err){
         return res.status(500).json({message:"Error Occured",error:err.message});
+    }
+});
+
+//creating the data
+app.post('/add',(req,res)=>{
+    try{
+        const newDriver={
+            id:drivers.length+1,
+            ...req.body
+        }
+        drivers.push(newDriver);
+        res.status(200).json({message:"student data is added"},newDriver);
+    }catch(err){
+        return res.status(500).json({message:"No",error:err.message});
+    }
+})
+
+//data update
+app.put('/update/:id',(req,res)=>{
+    try{
+        const id=req.params.id;
+        const index=drivers.find(s=>s.id==id);
+        if(index<0){
+            return res.status(404).json({message:"Incorrect index",drivers:index});
+        }
+        drivers[index]={
+            ...drivers[index],
+            ...req.body
+        }
+        res.status(200).json({message:"done",index:drivers[index]});
+    }catch(err){
+        return res.status(500).json({message:"Failed to Update,Please Try Again",error:err.message});
+    }
+})
+
+//data delete
+app.delete('/delete/:id',(req,res)=>{
+    try{
+        const id=req.params.id;
+        const index=drivers.find(s=>s.id==id);
+        if(index<0){
+            return res.status(404).json({message:"Incorrect index",drivers:index});
+        }
+        drivers.splice(index,1);
+        res.status(200).json({message:"Deleted Successfully"});
+    }catch(err){
+        return res.status(500).json({message:"Failed to Update,Please Try Again",error:err.message});
     }
 })
 app.get('/',(req,res)=>{
